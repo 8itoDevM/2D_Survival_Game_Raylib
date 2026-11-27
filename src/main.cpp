@@ -4,26 +4,26 @@ int window_size = 800;
 
 class Player{
 public:
-    int speed = 100;
     int life = 100;
-    Vector2 position = { (float)window_size/2  ,(float)window_size/2 } ;
+    int distance = 80;
+    Vector2 position = { (float)40,(float)760 } ;
 
     void Draw(){
-        DrawCircle(position.x, position.y, 35, WHITE);
+        DrawCircle(position.x, position.y, 26, WHITE);
     }
 
     void Update(){
-        if(IsKeyDown(KEY_DOWN)){
-            position.y += speed * GetFrameTime();
+        if(IsKeyPressed(KEY_DOWN)){
+            position.y += distance;
         }
-        if(IsKeyDown(KEY_LEFT)){
-            position.x -= speed * GetFrameTime();
+        if(IsKeyPressed(KEY_LEFT)){
+            position.x -= distance;
         }
-        if(IsKeyDown(KEY_UP)){
-            position.y -= speed * GetFrameTime();
+        if(IsKeyPressed(KEY_UP)){
+            position.y -= distance;
         }
-        if(IsKeyDown(KEY_RIGHT)){
-            position.x += speed * GetFrameTime();
+        if(IsKeyPressed(KEY_RIGHT)){
+            position.x += distance;
         }
     }
 };
