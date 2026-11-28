@@ -12,6 +12,10 @@ void TowerPlacer::Update(){
 
     mouse_position = GetMousePosition();
     current_tile = ConvertPositionToGrid(mouse_position);
+
+    if (current_tile.x > 10 || current_tile.x < 1) return;
+    if (current_tile.y > 10 || current_tile.y < 1) return;
+
     bool should_place = true;
     if(IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
         for(Tower& tower : towers){
