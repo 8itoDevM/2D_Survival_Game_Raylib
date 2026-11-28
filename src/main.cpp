@@ -13,7 +13,7 @@ int main(){
 
     while(WindowShouldClose() == false){
         game.Update();
-
+        
         BeginDrawing();
         game.Draw();
         EndDrawing();
